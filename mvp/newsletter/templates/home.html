@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+{% block style %}
+    .lead {
+        text-align: center;
+    }
+
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+
+<div class="jumbotron">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
+        <h1>MVP</h1>
+        <p class="lead">The MVP Landing project is designed to get your project started. The goal is to help
+            you launch as soon as possible with the least amount of investment using time or money. Join Us today
+        </p>
+            <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+    </div>
+        <div class="col-sm-6">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LXM_tGHcuMo" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class='col-sm-3'>
+        <p class='lead'>Django &amp; Bootstrap</p>
+        <span class="fa-stack fa-lg fa-5x">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <i class="fa fa-terminal fa-stack-1x fa-inverse "></i>
+</span>
+    </div>
+    <div class='col-sm-3'>
+        <p class='lead text-align-center'>Created for Starters
+            <br/>
+            <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+<span class="sr-only">Loading...</span></p>
+
+    </div>
+    <div class='col-sm-3'>
+        <p class='lead text-align-center'>Always Open Source <i class="fas fa-bath fa-5x"></i></p>
+    </div>
+  <div class="col-xs-3 pull-right" >
+
+            <p1 class='lead'>{{ title }}</p1>
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+
+            <input class='btn btn-primary' type="submit" value="Sign Up">
+            </form>
+  </div>
+
+
+</div>
+
+{% endblock %}
